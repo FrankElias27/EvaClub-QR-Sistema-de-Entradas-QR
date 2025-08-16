@@ -9,7 +9,7 @@ services:
       POSTGRES_DB: evaclub
     volumes:
       - postgres:/var/lib/postgresql/data
-      - ./init-db/initKeycloak.sql:/docker-entrypoint-initdb.d/initKeycloak.sql
+
     ports:
       - 5434:5432
     networks:
@@ -24,10 +24,10 @@ services:
     depends_on:
       - postgres
     environment:
-      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
-      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KEYCLOAK_ADMIN}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
       KC_DB: postgres
-      KC_DB_URL_HOST: postgres
+      KC_DB_URL_HOST: postgres-keycloak
       KC_DB_URL_PORT: 5432
       KC_DB_URL_DATABASE: keycloak
       KC_DB_USERNAME: ${KC_DB_USERNAME}
@@ -35,7 +35,24 @@ services:
     networks:
       - evaclub
     command:
-      - "start-dev"
+      - "start-dev" # se debe cambiar en producción
+
+  postgres-keycloak:
+    container_name: postgres-sql-keycloak
+    image: postgres
+    environment:
+      POSTGRES_USER: ${KC_DB_USERNAME}
+      POSTGRES_PASSWORD: ${KC_DB_PASSWORD}
+      PGDATA: /var/lib/postgresql/data
+      POSTGRES_DB: keycloak
+    volumes:
+      - postgres-keycloak:/var/lib/postgresql/data
+      - ./init-db/initKeycloak.sql:/docker-entrypoint-initdb.d/initKeycloak.sql
+    ports:
+      - 5435:5432
+    networks:
+      - evaclub
+    restart: unless-stopped
 
 networks:
   evaclub:
@@ -45,4 +62,6 @@ volumes:
   postgres:
     driver: local
   keycloak:
+    driver: local
+  postgres-keycloak:
     driver: local
