@@ -3,6 +3,7 @@ package com.frank.evaclub.event;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.frank.evaclub.common.BaseAuditingEntity;
 import com.frank.evaclub.eventRegistration.EventRegistration;
+import com.frank.evaclub.zone.Zone;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -34,5 +35,9 @@ public class Event extends BaseAuditingEntity {
     @OneToMany(mappedBy = "event",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JsonIgnore
     private Set<EventRegistration> eventRegistrations  = new HashSet<>();
+
+    @OneToMany(mappedBy = "event",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Set<Zone> zones  = new HashSet<>();
 
 }

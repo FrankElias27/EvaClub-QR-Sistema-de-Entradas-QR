@@ -2,33 +2,32 @@
 
   <div class="py-0 px-0 mx-auto  sm:py-0 lg:px-0 ">
    <div class="background-container2">
-    <div id="default-carousel" class="relative w-full pt-[60px]" data-carousel="slide">
-      <!-- Carousel wrapper -->
+    <div id="default-carousel" class="relative w-full pt-[64px]" data-carousel="slide">
+
       <div class="relative h-56 overflow-hidden md:h-[380px]">
-          <!-- Item 1 -->
+
           <div class="hidden duration-700 ease-in-out" data-carousel-item>
               <img src="fondo002.webp" class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover" alt="...">
           </div>
-          <!-- Item 2 -->
+
           <div class="hidden duration-700 ease-in-out" data-carousel-item>
               <img src="fondo001.webp" class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover" alt="...">
           </div>
-          <!-- Item 3 -->
+
           <div class="hidden duration-700 ease-in-out" data-carousel-item>
               <img src="fondo003.webp" class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  object-cover" alt="...">
           </div>
-          <!-- Item 4 -->
+
           <div class="hidden duration-700 ease-in-out" data-carousel-item>
               <img src="fondo002.webp" class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover" alt="...">
           </div>
-          <!-- Item 5 -->
+
           <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="fondo001.webp" class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover" alt="...">
           </div>
 
-
       </div>
-      <!-- Slider indicators -->
+
       <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
           <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
           <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
@@ -36,8 +35,6 @@
           <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
           <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
       </div>
-      <!-- Slider controls -->
-
     </div>
   </div>
 
@@ -110,11 +107,137 @@
 
         <img src="10.webp" class="w-36 h-36  text-gray-800 mx-2 rounded-[10px]" alt="...">
 
-
-
       </div>
     </div>
 
+    <div class="max-w-[980px] mx-auto p-5">
+    <h1 class="text-xl font-semibold mb-3">Mapa del Recinto – Solo Cuadrados (Tailwind)</h1>
+
+    <!-- Grilla principal -->
+     <div class="flex justify-center">
+    <div
+      class="grid border-2 border-black bg-slate-200 p-[40px] gap-[6px] rounded-[40px]"
+      style="grid-template-columns:repeat(18,42px);grid-auto-rows:42px;"
+      aria-label="Mapa del recinto por zonas, en cuadrados"
+    >
+      <!-- Barra superior y baños -->
+      <div class="flex items-center justify-center w-full h-full font-bold text-xs select-none border border-black text-white bg-[#b71c1c] [grid-column:7/span_8] [grid-row:1] rounded-bl-[20px] rounded-br-[20px]">BARRA</div>
+      <div class="flex items-center justify-center w-full h-full font-bold text-xs select-none border border-black bg-[#90a4ae] [grid-column:3/span_2] [grid-row:1] rounded-tl-[20px]">BAÑO</div>
+      <div class="flex items-center justify-center w-full h-full font-bold text-xs select-none border border-black bg-[#90a4ae] [grid-column:17/span_2] [grid-row:1] rounded-tr-[20px]">BAÑO</div>
+
+      <!-- Platinium laterales (superior) -->
+      <!-- izquierda -->
+
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:4] [grid-row:3]">P</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:4] [grid-row:5]">P</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:4] [grid-row:6]">P</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:4] [grid-row:7]">P</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:4] [grid-row:8]">P</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:4] [grid-row:9]">P</div>
+
+      <!-- derecha -->
+
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:3]">P</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:4]">P</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:5]">P</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:6]">P</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:7]">P</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:8]">P</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:9]">P</div>
+
+      <!-- Mesa Platinum (central) -->
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:9] [grid-row:3]">MP</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:10] [grid-row:3]">MP</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:11] [grid-row:3]">MP</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:12] [grid-row:3]">MP</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:9] [grid-row:4]">MP</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:10] [grid-row:4]">MP</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:11] [grid-row:4]">MP</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:12] [grid-row:4]">MP</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:9] [grid-row:5]">MP</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:10] [grid-row:5]">MP</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:11] [grid-row:5]">MP</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:12] [grid-row:5]">MP</div>
+
+      <!-- Escenario -->
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-black [grid-column:8/span_6] [grid-row:7]">ESCENARIO</div>
+
+      <!-- Super VIP -->
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:9] [grid-row:9]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:10] [grid-row:9]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:11] [grid-row:9]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:12] [grid-row:9]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:9] [grid-row:10]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:10] [grid-row:10]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:11] [grid-row:10]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:12] [grid-row:10]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:9] [grid-row:11]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:10] [grid-row:11]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:11] [grid-row:11]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:12] [grid-row:11]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:9] [grid-row:12]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:10] [grid-row:12]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:11] [grid-row:12]">SV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:12] [grid-row:12]">SV</div>
+
+      <!-- Box VIP laterales -->
+      <!-- izquierda col 3 y 4 -->
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:11]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:12]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:13]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:14]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:15]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:16]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:17]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:18]">BX</div>
+
+      <!-- derecha col 15 y 16 -->
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:11]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:12]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:13]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:14]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:15]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:16]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:17]">BX</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:18]">BX</div>
+
+      <!-- Mesa VIP (bloque central grande) -->
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:8] [grid-row:14]">MV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:9] [grid-row:14]">MV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:10] [grid-row:14]">MV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:11] [grid-row:14]">MV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:12] [grid-row:14]">MV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:13] [grid-row:14]">MV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:8] [grid-row:14]">MV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:8] [grid-row:15]">MV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:8] [grid-row:16]">MV</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:8] [grid-row:17]">MV</div>
+
+      <!-- Mezzanine central -->
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:7/span_6] [grid-row:18]">MEZ</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:7/span_6] [grid-row:19]">MEZ</div>
+
+      <!-- Backstage + Barra inferior -->
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#424242] [grid-column:1/span_2] [grid-row:18]">BACKSTAGE</div>
+      <div class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#b71c1c] [grid-column:17/span_2] [grid-row:18]">BARRA</div>
+    </div>
+    </div>
+    <!-- Leyenda -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mt-4 text-sm">
+      <div class="flex items-center gap-2"><span class="w-4 h-4 border border-black bg-[#ef5350]"></span> Super VIP</div>
+      <div class="flex items-center gap-2"><span class="w-4 h-4 border border-black bg-[#8d6e63]"></span> Mesa Platinum</div>
+      <div class="flex items-center gap-2"><span class="w-4 h-4 border border-black bg-[#d16ba5]"></span> Platinium (lateral)</div>
+      <div class="flex items-center gap-2"><span class="w-4 h-4 border border-black bg-[#42a5f5]"></span> Box VIP</div>
+      <div class="flex items-center gap-2"><span class="w-4 h-4 border border-black bg-[#66bb6a]"></span> Mesa VIP</div>
+      <div class="flex items-center gap-2"><span class="w-4 h-4 border border-black bg-[#ffa726]"></span> Mezzanine Central</div>
+      <div class="flex items-center gap-2"><span class="w-4 h-4 border border-black bg-black"></span> Escenario</div>
+      <div class="flex items-center gap-2"><span class="w-4 h-4 border border-black bg-[#b71c1c]"></span> Barra</div>
+      <div class="flex items-center gap-2"><span class="w-4 h-4 border border-black bg-[#90a4ae]"></span> Baños</div>
+      <div class="flex items-center gap-2"><span class="w-4 h-4 border border-black bg-[#424242]"></span> Backstage</div>
+    </div>
+
+    <p class="text-xs text-slate-600 mt-3">Para ajustar tamaños, cambia los valores de <code>repeat(18,42px)</code> y <code>grid-auto-rows:42px</code> en el contenedor de la grilla. Las posiciones usan utilidades arbitrarias de Tailwind como <code>[grid-column:x/span_y]</code> y <code>[grid-row:n]</code>.</p>
+  </div>
 
 
   </div>
@@ -340,3 +463,5 @@
       </div>
   </div>
 </section>
+
+
