@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import 'flowbite';
 import { initFlowbite } from 'flowbite';
 
@@ -9,14 +9,26 @@ import { initFlowbite } from 'flowbite';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit, OnInit {
 
-   ngAfterViewInit() {
+  ngAfterViewInit() {
     initFlowbite();
-
   }
 
 
+  ngOnInit() {
+    this.InitScroll();
+  }
+
+  InitScroll(): void {
+    const content = document.getElementById("scrollContent");
+    if (content) {
+      const clone = content.innerHTML;
+      for (let i = 0; i < 3; i++) {
+        content.innerHTML += clone;
+      }
+    }
+  }
 
 
 }
