@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import Keycloak from 'keycloak-js';
 import {Router} from '@angular/router';
+import { environment } from '../../../enviroments/enviroments';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +18,9 @@ export class KeycloakService {
   get keycloak() {
     if (!this._keycloak) {
       this._keycloak = new Keycloak({
-        url: 'http://localhost:9090',
-        realm: 'whatsapp-clone',
-        clientId: 'whatsapp-clone-app'
+        url: environment.KEYCLOAK_URL,
+        realm: environment.KEYCLOAK_REALM,
+        clientId: environment.KEYCLOAK_CLIENTID
       });
     }
     return this._keycloak;
