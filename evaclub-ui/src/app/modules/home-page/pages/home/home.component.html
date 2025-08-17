@@ -83,55 +83,24 @@
         <!-- Grilla principal -->
         <div class="flex justify-center">
           <div class="relative group">
-            <div class="grid border-2 border-black bg-slate-200 p-[40px] gap-[6px] rounded-[40px]"
-              style="grid-template-columns:repeat(18,42px);grid-auto-rows:42px;"
-              aria-label="Mapa del recinto por zonas, en cuadrados">
+            <div class="grid-mapa" aria-label="Mapa del recinto por zonas, en cuadrados">
               <!-- Barra superior y baños -->
               <div
-                class="flex items-center justify-center w-full h-full font-bold text-xs select-none border border-black text-white bg-[#b71c1c] [grid-column:7/span_8] [grid-row:1] rounded-bl-[20px] rounded-br-[20px]">
+                class="flex items-center justify-center w-full h-full font-bold text-xs select-none border border-black text-white bg-[#b71c1c] [grid-column:4/span_8] [grid-row:1] rounded-bl-[20px] rounded-br-[20px]">
                 BARRA</div>
               <div
-                class="flex items-center justify-center w-full h-full font-bold text-xs select-none border border-black text-white bg-black [grid-column:3/span_2] [grid-row:1] rounded-tl-[20px]">
+                class="flex items-center justify-center w-full h-full font-bold text-xs select-none border border-black text-white bg-black [grid-column:1/span_2] [grid-row:1] rounded-tl-[20px]">
                 BAÑO</div>
               <div
-                class="flex items-center justify-center w-full h-full font-bold text-xs select-none border border-black text-white bg-black [grid-column:17/span_2] [grid-row:1] rounded-tr-[20px]">
+                class="flex items-center justify-center w-full h-full font-bold text-xs select-none border border-black text-white bg-black [grid-column:13/span_2] [grid-row:1] rounded-tr-[20px]">
                 BAÑO</div>
 
               <!-- Platinium laterales (superior) -->
               <!-- izquierda -->
 
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:4] [grid-row:3]">
-                P</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:4] [grid-row:5]">
-                P</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:4] [grid-row:6]">
-                P</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:4] [grid-row:7]">
-                P</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:4] [grid-row:8]">
-                P</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:4] [grid-row:9]">
-                P</div>
-
-              <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:2] [grid-row:3]">
                 P</div>
-              <div class="flex items-center justify-center border border-black [grid-column:2] [grid-row:4]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"
-                  class="w-16 h-16 text-black transform -rotate-90" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="20" y="10" width="24" height="6" />
-                  <rect x="18" y="18" width="28" height="6" />
-                  <rect x="16" y="26" width="32" height="6" />
-                  <rect x="14" y="34" width="36" height="6" />
-                  <rect x="12" y="42" width="40" height="6" />
-                </svg>
-              </div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:2] [grid-row:5]">
                 P</div>
@@ -148,183 +117,221 @@
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:2] [grid-row:9]">
                 P</div>
 
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:1] [grid-row:3]">
+                P</div>
+              <div class="flex items-center justify-center border border-black [grid-column:1] [grid-row:4]">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"
+                  class="w-16 h-16 text-black transform -rotate-90" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="20" y="10" width="24" height="6" />
+                  <rect x="18" y="18" width="28" height="6" />
+                  <rect x="16" y="26" width="32" height="6" />
+                  <rect x="14" y="34" width="36" height="6" />
+                  <rect x="12" y="42" width="40" height="6" />
+                </svg>
+              </div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:1] [grid-row:5]">
+                P</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:1] [grid-row:6]">
+                P</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:1] [grid-row:7]">
+                P</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:1] [grid-row:8]">
+                P</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:1] [grid-row:9]">
+                P</div>
+
               <!-- derecha -->
 
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:3]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:13] [grid-row:3]">
                 P</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:4]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:13] [grid-row:4]">
                 P</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:5]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:13] [grid-row:5]">
                 P</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:6]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:13] [grid-row:6]">
                 P</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:7]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:13] [grid-row:7]">
                 P</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:8]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:13] [grid-row:8]">
                 P</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:17] [grid-row:9]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#d16ba5] [grid-column:13] [grid-row:9]">
                 P</div>
 
               <!-- Mesa Platinum (central) -->
 
               <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:6] [grid-row:3]">
+                MP</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:7] [grid-row:3]">
+                MP</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:8] [grid-row:3]">
+                MP</div>
+              <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:9] [grid-row:3]">
                 MP</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:10] [grid-row:3]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:6] [grid-row:4]">
                 MP</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:11] [grid-row:3]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:7] [grid-row:4]">
                 MP</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:12] [grid-row:3]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:8] [grid-row:4]">
                 MP</div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:9] [grid-row:4]">
                 MP</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:10] [grid-row:4]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:6] [grid-row:5]">
                 MP</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:11] [grid-row:4]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:7] [grid-row:5]">
                 MP</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:12] [grid-row:4]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:8] [grid-row:5]">
                 MP</div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:9] [grid-row:5]">
-                MP</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:10] [grid-row:5]">
-                MP</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:11] [grid-row:5]">
-                MP</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#8d6e63] [grid-column:12] [grid-row:5]">
                 MP</div>
 
 
 
               <!-- Escenario -->
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-black [grid-column:8/span_6] [grid-row:7/span_2]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-black [grid-column:5/span_6] [grid-row:7/span_2]">
                 ESCENARIO</div>
 
               <!-- Super VIP -->
               <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:6] [grid-row:10]">
+                SV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:7] [grid-row:10]">
+                SV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:8] [grid-row:10]">
+                SV</div>
+              <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:9] [grid-row:10]">
                 SV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:10] [grid-row:10]">
-                SV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:11] [grid-row:10]">
-                SV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:12] [grid-row:10]">
-                SV</div>
 
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:6] [grid-row:11]">
+                SV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:7] [grid-row:11]">
+                SV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:8] [grid-row:11]">
+                SV</div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:9] [grid-row:11]">
                 SV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:10] [grid-row:11]">
-                SV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:11] [grid-row:11]">
-                SV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:12] [grid-row:11]">
-                SV</div>
 
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:6] [grid-row:12]">
+                SV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:7] [grid-row:12]">
+                SV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:8] [grid-row:12]">
+                SV</div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:9] [grid-row:12]">
                 SV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:10] [grid-row:12]">
-                SV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:11] [grid-row:12]">
-                SV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:12] [grid-row:12]">
-                SV</div>
 
               <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:6] [grid-row:13]">
+                SV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:7] [grid-row:13]">
+                SV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:8] [grid-row:13]">
+                SV</div>
+              <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:9] [grid-row:13]">
-                SV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:10] [grid-row:13]">
-                SV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:11] [grid-row:13]">
-                SV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#ef5350] [grid-column:12] [grid-row:13]">
                 SV</div>
 
               <!-- Box VIP laterales -->
               <!-- izquierda col 3 y 4 -->
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:11]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:2] [grid-row:11]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:12]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:2] [grid-row:12]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:13]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:2] [grid-row:13]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:14]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:2] [grid-row:14]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:15]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:2] [grid-row:15]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:16]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:2] [grid-row:16]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:17]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:2] [grid-row:17]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:4] [grid-row:18]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:2] [grid-row:18]">
                 BX</div>
 
               <!-- derecha col 15 y 16 -->
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:11]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:13] [grid-row:11]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:12]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:13] [grid-row:12]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:13]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:13] [grid-row:13]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:14]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:13] [grid-row:14]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:15]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:13] [grid-row:15]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:16]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:13] [grid-row:16]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:17]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:13] [grid-row:17]">
                 BX</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:17] [grid-row:18]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#42a5f5] [grid-column:13] [grid-row:18]">
                 BX</div>
 
               <!-- Mesa VIP (bloque central grande) -->
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:5] [grid-row:15]">
+                MV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:6] [grid-row:15]">
+                MV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:7] [grid-row:15]">
+                MV</div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:8] [grid-row:15]">
                 MV</div>
@@ -334,16 +341,16 @@
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:10] [grid-row:15]">
                 MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:11] [grid-row:15]">
-                MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:12] [grid-row:15]">
-                MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:13] [grid-row:15]">
-                MV</div>
 
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:5] [grid-row:16]">
+                MV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:6] [grid-row:16]">
+                MV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:7] [grid-row:16]">
+                MV</div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:8] [grid-row:16]">
                 MV</div>
@@ -353,16 +360,16 @@
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:10] [grid-row:16]">
                 MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:11] [grid-row:16]">
-                MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:12] [grid-row:16]">
-                MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:13] [grid-row:16]">
-                MV</div>
 
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:5] [grid-row:17]">
+                MV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:6] [grid-row:17]">
+                MV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:7] [grid-row:17]">
+                MV</div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:8] [grid-row:17]">
                 MV</div>
@@ -372,16 +379,16 @@
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:10] [grid-row:17]">
                 MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:11] [grid-row:17]">
-                MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:12] [grid-row:17]">
-                MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:13] [grid-row:17]">
-                MV</div>
 
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:5] [grid-row:18]">
+                MV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:6] [grid-row:18]">
+                MV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:7] [grid-row:18]">
+                MV</div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:8] [grid-row:18]">
                 MV</div>
@@ -391,16 +398,16 @@
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:10] [grid-row:18]">
                 MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:11] [grid-row:18]">
-                MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:12] [grid-row:18]">
-                MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:13] [grid-row:18]">
-                MV</div>
 
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:5] [grid-row:19]">
+                MV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:6] [grid-row:19]">
+                MV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:7] [grid-row:19]">
+                MV</div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:8] [grid-row:19]">
                 MV</div>
@@ -410,16 +417,16 @@
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:10] [grid-row:19]">
                 MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:11] [grid-row:19]">
-                MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:12] [grid-row:19]">
-                MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:13] [grid-row:19]">
-                MV</div>
 
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:5] [grid-row:20]">
+                MV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:6] [grid-row:20]">
+                MV</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:7] [grid-row:20]">
+                MV</div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:8] [grid-row:20]">
                 MV</div>
@@ -429,19 +436,16 @@
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:10] [grid-row:20]">
                 MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:11] [grid-row:20]">
-                MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:12] [grid-row:20]">
-                MV</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#66bb6a] [grid-column:13] [grid-row:20]">
-                MV</div>
 
 
 
               <!-- Mezzanine central -->
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:6] [grid-row:22]">
+                MEZ</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:7] [grid-row:22]">
+                MEZ</div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:8] [grid-row:22]">
                 MEZ</div>
@@ -451,13 +455,13 @@
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:10] [grid-row:22]">
                 MEZ</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:11] [grid-row:22]">
-                MEZ</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:12] [grid-row:22]">
-                MEZ</div>
 
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:6] [grid-row:23]">
+                MEZ</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:7] [grid-row:23]">
+                MEZ</div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:8] [grid-row:23]">
                 MEZ</div>
@@ -467,13 +471,13 @@
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:10] [grid-row:23]">
                 MEZ</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:11] [grid-row:23]">
-                MEZ</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:12] [grid-row:23]">
-                MEZ</div>
 
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:6] [grid-row:24]">
+                MEZ</div>
+              <div
+                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:7] [grid-row:24]">
+                MEZ</div>
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:8] [grid-row:24]">
                 MEZ</div>
@@ -483,20 +487,14 @@
               <div
                 class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:10] [grid-row:24]">
                 MEZ</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:11] [grid-row:24]">
-                MEZ</div>
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black bg-[#ffa726] [grid-column:12] [grid-row:24]">
-                MEZ</div>
 
 
               <!-- Backstage + Barra inferior -->
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-black   [grid-column:3/span_2] [grid-row:20/span_5]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-black   [grid-column:1/span_2] [grid-row:20/span_5]">
                 BACKSTAGE</div>
               <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#b71c1c] [grid-column:17/span_2] [grid-row:20/span_5] rounded-tl-[20px] rounded-bl-[20px]">
+                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-[#b71c1c] [grid-column:13/span_2] [grid-row:20/span_5] rounded-tl-[20px] rounded-bl-[20px]">
                 BARRA</div>
             </div>
 
