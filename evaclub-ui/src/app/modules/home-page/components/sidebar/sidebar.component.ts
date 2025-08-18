@@ -12,7 +12,7 @@ import { KeycloakService } from '../../../../utils/keycloak/keycloak.service';
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit, AfterViewInit {
 
   isLoggedIn = false;
   user: any;
@@ -21,6 +21,12 @@ export class SidebarComponent implements OnInit {
     private router: Router,
     private keycloakService:KeycloakService
   ){}
+
+  ngAfterViewInit() {
+  if (this.isLoggedIn) {
+    initFlowbite();
+  }
+}
 
   async ngOnInit() {
       this.InitKeycloak();

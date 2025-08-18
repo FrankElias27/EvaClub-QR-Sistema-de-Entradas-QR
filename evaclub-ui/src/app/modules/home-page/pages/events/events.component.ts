@@ -1,38 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { EventsService } from '../../../../services/services/events.service';
-import { EventRequest } from '../../../../services/models';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { EventResponse } from '../../../../services/models';
 
 @Component({
   selector: 'app-events',
-  imports: [],
+  imports: [
+    MatTableModule,
+    MatPaginatorModule,
+  ],
   templateUrl: './events.component.html',
   styleUrl: './events.component.css'
 })
-export class EventsComponent {
+export class EventsComponent implements OnInit {
+  displayedColumns: string[] = ['Imagen', 'Evento', 'Fecha del Evento', 'Configuracion', 'Estado', 'Acciones'];
+  dataSource = new MatTableDataSource<EventResponse>();
 
-  constructor(
-    private eventsService:EventsService
-  ){
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+  constructor(private eventsService: EventsService) {}
+
+  ngOnInit(): void {
+    this.loadEvents();
   }
 
-  createDefaultEvent() {
-    const request: EventRequest = {
-  name: 'Evento por defecto',
-  eventDate: new Date().toISOString(),
-  enabled: true,
-  defaultLayout: true,
-  eventCover: 'default-cover.jpg'
-};
-
-this.eventsService.saveEventDefault({ body: request }).subscribe({
-  next: (response) => {
-    console.log('Evento creado:', response);
-  },
-  error: (err) => {
-    console.error('Error al crear evento:', err);
+  loadEvents(page: number = 0, size: number = 10) {
+    this.eventsService.findAllEvents({ page, size }).subscribe({
+      next: (res) => {
+        if (res.content) {
+            this.dataSource.data = res.content;
+          }
+        this.dataSource.paginator = this.paginator;
+      },
+      error: (err) => console.error('Error al cargar eventos', err)
+    });
   }
-});
+
+
+  onPageChange(event: any) {
+    this.loadEvents(event.pageIndex, event.pageSize);
   }
 
 }

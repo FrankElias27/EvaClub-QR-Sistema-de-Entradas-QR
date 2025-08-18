@@ -1,0 +1,28 @@
+
+.mat-mdc-table {
+  background-color: #f0f0f0;
+}
+
+.mat-mdc-row {
+  background-color: #ffffff;
+}
+
+.mat-mdc-row:hover {
+  background-color: #e0e0e0;
+}
+
+.mat-mdc-header-row {
+  background-color: #ffffff;
+}
+
+.mat-mdc-cell {
+  background-color: #ffffff;
+}
+
+/* Aumenta el espacio dentro del dropdown del paginator */
+::ng-deep .mat-mdc-paginator-touch-target {
+  padding-left: 0.75rem;  /* espacio a la izquierda */
+  padding-right: 0.75rem; /* espacio a la derecha */
+  min-width: 3rem;        /* ancho mínimo */
+  height: 40px;            /* altura para que no se vea tan apretado */
+}

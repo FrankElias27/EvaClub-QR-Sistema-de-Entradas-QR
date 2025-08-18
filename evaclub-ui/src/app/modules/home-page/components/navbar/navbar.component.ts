@@ -52,9 +52,6 @@ export class NavbarComponent implements OnInit {
     }
 
 
-
-
-
   updateNavbar() {
     if (this.isLoggedIn) {
       setTimeout(() => initFlowbite(), 100);
