@@ -35,10 +35,8 @@ export class KeycloakService {
   }
 
    async login() {
-    if (!this._keycloak) {
-      await this.init();
-    }
-    await this.keycloak.login();
+
+    await this.keycloak.login({ redirectUri: environment.ANGULAR_APP_LOGIN });
   }
 
   get userId(): string {
@@ -54,7 +52,7 @@ export class KeycloakService {
   }
 
   logout() {
-    return this.keycloak.logout({redirectUri: environment.ANGULAR_APP});
+    return this.keycloak.logout({redirectUri: environment.ANGULAR_APP_LOGOUT});
   }
 
   accountManagement() {
