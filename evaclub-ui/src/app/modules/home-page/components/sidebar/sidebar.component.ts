@@ -66,6 +66,15 @@ export class SidebarComponent implements OnInit {
   });
   }
 
+  goToEvents() {
+  const isMobile = window.innerWidth <= 768;
+  this.router.navigate(['/home/events']).then(() => {
+    if (isMobile) {
+      this.closeSidebar();
+    }
+  });
+  }
+
   closeSidebar() {
   const sidebar = document.getElementById('default-sidebar');
   if (sidebar) {

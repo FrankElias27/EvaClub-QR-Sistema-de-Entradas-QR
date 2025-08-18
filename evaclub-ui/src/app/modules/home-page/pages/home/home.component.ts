@@ -3,6 +3,7 @@ import 'flowbite';
 import { initFlowbite } from 'flowbite';
 import { KeycloakService } from '../../../../utils/keycloak/keycloak.service';
 import { CommonModule } from '@angular/common';
+import { EventsService } from '../../../../services/services/events.service';
 
 
 @Component({
@@ -19,7 +20,9 @@ export class HomeComponent implements AfterViewInit, OnInit {
   hasAdminSystemRole = false;
   hasUserRole = false;
 
-  constructor(private keycloakService: KeycloakService) {}
+  constructor(private keycloakService: KeycloakService,
+              private EventsService:EventsService
+  ) {}
 
   ngAfterViewInit() {
     initFlowbite();
@@ -30,6 +33,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     this.InitScroll();
     this.InitKeycloak();
   }
+
 
   InitScroll(): void {
     const content = document.getElementById("scrollContent");

@@ -29,6 +29,7 @@ public class Event extends BaseAuditingEntity {
     private String eventCover;
     private LocalDateTime eventDate;
     private boolean enabled;
+    private boolean defaultLayout;
 
     @OneToMany(mappedBy = "event",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JsonIgnore

@@ -35,4 +35,13 @@ public class EventController {
     ) {
         return ResponseEntity.ok(service.findAllEvents(page, size, connectedUser));
     }
+
+    @PostMapping("/default")
+    public ResponseEntity<EventResponse> saveEventDefault(
+            @Valid @RequestBody EventRequest request,
+            Authentication connectedUser
+    ) {
+        EventResponse response = service.saveEventDefault(request, connectedUser);
+        return ResponseEntity.ok(response);
+    }
 }

@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { ZoneService } from './services/zone.service';
+import { EventsService } from './services/events.service';
 
 /**
  * Module that provides all services and configuration.
@@ -15,6 +16,7 @@ import { ZoneService } from './services/zone.service';
   declarations: [],
   providers: [
     ZoneService,
+    EventsService,
     ApiConfiguration
   ],
 })

@@ -24,6 +24,12 @@ const routes: Routes = [
         loadComponent: () =>
           import('./pages/zones/zones.component').then(m => m.ZonesComponent),
       },
+      {
+        path: 'events',
+        canActivate: [authGuard],
+        loadComponent: () =>
+          import('./pages/events/events.component').then(m => m.EventsComponent),
+      },
     ],
   },
 ];
