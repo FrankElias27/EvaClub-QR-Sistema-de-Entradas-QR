@@ -1,23 +1,34 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import 'flowbite';
 import { initFlowbite } from 'flowbite';
+import { KeycloakService } from '../../../../utils/keycloak/keycloak.service';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [
+    CommonModule,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements AfterViewInit, OnInit {
+  isLoggedIn = false;
+  user: any;
+  hasAdminSystemRole = false;
+  hasUserRole = false;
+
+  constructor(private keycloakService: KeycloakService) {}
 
   ngAfterViewInit() {
     initFlowbite();
   }
 
 
-  ngOnInit() {
+  async ngOnInit() {
     this.InitScroll();
+    this.InitKeycloak();
   }
 
   InitScroll(): void {
@@ -29,6 +40,31 @@ export class HomeComponent implements AfterViewInit, OnInit {
       }
     }
   }
+
+  async InitKeycloak() {
+      this.isLoggedIn = this.keycloakService.isTokenValid;
+
+      if (this.isLoggedIn) {
+        const token = this.keycloakService.keycloak.tokenParsed;
+
+        const realmRoles: string[] = token?.['realm_access']?.roles || [];
+
+        this.user = {
+          nombre: token?.['given_name'],
+          apellidoPaterno: token?.['family_name'],
+          email: token?.['email'],
+          roles: realmRoles
+        };
+
+        this.hasAdminSystemRole =
+          this.user.roles.includes('ADMIN-SYSTEM') && this.user.roles.includes('USER');
+
+        this.hasUserRole =
+         this.user.roles.includes('USER') && !this.user.roles.includes('ADMIN-SYSTEM');
+
+
+      }
+    }
 
 
 }

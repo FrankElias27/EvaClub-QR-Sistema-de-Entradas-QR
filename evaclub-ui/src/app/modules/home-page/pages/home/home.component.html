@@ -1,7 +1,8 @@
 <section class=" bg-white dark:bg-gray-900 ">
-
   <div class="py-0 px-0 mx-auto  sm:py-0 lg:px-0 ">
-    <div class="background-container2">
+
+    <!-- USER -->
+    <div  *ngIf="isLoggedIn && hasUserRole" class="background-container2">
       <div id="default-carousel" class="relative w-full pt-[64px]" data-carousel="slide">
 
         <div class="relative h-56 overflow-hidden md:h-[380px]">
@@ -54,8 +55,8 @@
     </div>
 
     <div class="background-container">
-
-      <div class="overflow-hidden relative w-full py-4">
+      <!-- USER -->
+      <div *ngIf="isLoggedIn && hasUserRole" class="overflow-hidden relative w-full py-4">
         <div id="scrollContent" class="flex whitespace-nowrap animate-infinite-scroll">
           <img src="01.webp" class="w-36 h-36 mx-2 rounded-[10px]" alt="...">
           <img src="03.webp" class="w-36 h-36 mx-2 rounded-[10px]" alt="...">
@@ -68,111 +69,122 @@
         </div>
       </div>
 
-      <div class="max-w-[980px] mx-auto p-5">
-
+      <!-- USER -->
+      <div *ngIf="isLoggedIn && hasUserRole" class="max-w-[980px] mx-auto p-5">
 
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-        <a href="#" class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
-            <span class="text-xs bg-[#120b28] rounded-full text-white px-4 py-1.5 mr-3">New</span> <span class="text-sm font-medium">Ya puedes obtener tus QRs!</span>
-            <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-        </a>
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl dark:text-white">Obtén tu QR y reserva tu box exclusivo para el evento.</h1>
-        <p class="mb-8 text-lg font-normal text-gray-400 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Asegura tu lugar ahora y disfruta del evento sin filas ni esperas. Cada box es limitado, así que escanea tu QR y garantiza tu acceso exclusivo y cómodo.</p>
+          <a href="#"
+            class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
+            role="alert">
+            <span class="text-xs bg-[#120b28] rounded-full text-white px-4 py-1.5 mr-3">New</span> <span
+              class="text-sm font-medium">Ya puedes obtener tus QRs!</span>
+            <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <h1
+            class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl dark:text-white">
+            Obtén tu QR y reserva tu box exclusivo para el evento.</h1>
+          <p class="mb-8 text-lg font-normal text-gray-400 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Asegura tu
+            lugar ahora y disfruta del evento sin filas ni esperas. Cada box es limitado, así que escanea tu QR y
+            garantiza tu acceso exclusivo y cómodo.</p>
 
-    </div>
+        </div>
 
         <!-- Grilla principal -->
         <div class="flex justify-center">
 
-            <div class="grid-mapa" aria-label="Mapa del recinto por zonas, en cuadrados">
-              <!-- Barra superior y baños -->
-              <div
-                class="flex flex-col items-center justify-center w-full h-full p-6 text-center font-bold text-xs select-none bg-[#b71c1c] text-white border border-gray-100 rounded-bl-[20px] rounded-br-[20px] shadow [grid-column:4/span_8] [grid-row:1]">
-                BARRA
-              </div>
-              <div
-                class="flex items-center justify-center w-full h-full font-bold text-xs select-none border border-black text-white bg-black [grid-column:1/span_2] [grid-row:1] rounded-tl-[20px]">
-                BAÑO</div>
-              <div
-                class="flex items-center justify-center w-full h-full font-bold text-xs select-none border border-black text-white bg-black [grid-column:13/span_2] [grid-row:1] rounded-tr-[20px]">
-                BAÑO</div>
-
-              <!-- Platinium laterales (superior) -->
-              <!-- izquierda -->
-
-              <div
-                 class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:1/span_2] [grid-row:3/span_7] [writing-mode:vertical-rl]">
-                PLATINUM BOX O PALCO
-              </div>
-
-              <!-- derecha -->
-
-              <div
-                class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:13/span_2] [grid-row:3/span_7] [writing-mode:vertical-rl]">
-                PLATINUM BOX
-              </div>
-
-
-              <!-- Mesa Platinum (central) -->
-
-              <div
-                  class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:5/span_6] [grid-row:3/span_3]">
-                  MESA PLATINUM
-                    S./80
-              </div>
-
-
-              <!-- Escenario -->
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-black rounded-[10px] [grid-column:5/span_6] [grid-row:7/span_2]">
-                ESCENARIO</div>
-
-              <!-- Super VIP -->
-              <div
-                class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:5/span_6] [grid-row:10/span_4]">
-                SUPER VIP S./80
-              </div>
-
-
-              <!-- Box VIP laterales -->
-              <!-- izquierda col 3 y 4 -->
-              <div
-                class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:1/span_2] [grid-row:11/span_8] [writing-mode:vertical-rl]">
-                BOX VIP
-              </div>
-
-
-              <!-- derecha col 15 y 16 -->
-              <div
-                class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:13/span_2] [grid-row:11/span_8] [writing-mode:vertical-rl]">
-                BOX VIP</div>
-
-
-              <!-- Mesa VIP (bloque central grande) -->
-              <div
-                class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:5/span_6] [grid-row:15/span_6] ">
-                MESA VIP
-              </div>
-
-
-
-
-              <!-- Mezzanine central -->
-              <div
-                class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:5/span_6] [grid-row:22/span_3] ">
-                MEZZANINE</div>
-
-
-
-              <!-- Backstage + Barra inferior -->
-              <div
-                class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-black [grid-column:1/span_2] [grid-row:20/span_5] [writing-mode:vertical-rl]">
-                BACKSTAGE</div>
-              <div
-                class="flex flex-col items-center justify-center p-6 text-center font-bold text-xs select-none bg-[#b71c1c] text-white border border-gray-100 shadow rounded-tl-[20px] rounded-bl-[20px] [grid-column:13/span_2] [grid-row:20/span_5]">
-                BARRA
-              </div>
+          <div class="grid-mapa" aria-label="Mapa del recinto por zonas, en cuadrados">
+            <!-- Barra superior y baños -->
+            <div
+              class="flex flex-col items-center justify-center w-full h-full p-6 text-center font-bold text-xs select-none bg-[#b71c1c] text-white border border-gray-100 rounded-bl-[20px] rounded-br-[20px] shadow [grid-column:4/span_8] [grid-row:1]">
+              BARRA
             </div>
+            <div
+              class="flex items-center justify-center w-full h-full font-bold text-xs select-none border border-black text-white bg-black [grid-column:1/span_2] [grid-row:1] rounded-tl-[20px]">
+              BAÑO</div>
+            <div
+              class="flex items-center justify-center w-full h-full font-bold text-xs select-none border border-black text-white bg-black [grid-column:13/span_2] [grid-row:1] rounded-tr-[20px]">
+              BAÑO</div>
+
+            <!-- Platinium laterales (superior) -->
+            <!-- izquierda -->
+
+            <div
+              class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:1/span_2] [grid-row:3/span_7] [writing-mode:vertical-rl]">
+              PLATINUM BOX O PALCO
+            </div>
+
+            <!-- derecha -->
+
+            <div
+              class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:13/span_2] [grid-row:3/span_7] [writing-mode:vertical-rl]">
+              PLATINUM BOX
+            </div>
+
+
+            <!-- Mesa Platinum (central) -->
+
+            <div
+              class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:5/span_6] [grid-row:3/span_3]">
+              MESA PLATINUM
+              S./80
+            </div>
+
+
+            <!-- Escenario -->
+            <div
+              class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-black rounded-[10px] [grid-column:5/span_6] [grid-row:7/span_2]">
+              ESCENARIO</div>
+
+            <!-- Super VIP -->
+            <div
+              class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:5/span_6] [grid-row:10/span_4]">
+              SUPER VIP S./80
+            </div>
+
+
+            <!-- Box VIP laterales -->
+            <!-- izquierda col 3 y 4 -->
+            <div
+              class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:1/span_2] [grid-row:11/span_8] [writing-mode:vertical-rl]">
+              BOX VIP
+            </div>
+
+
+            <!-- derecha col 15 y 16 -->
+            <div
+              class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:13/span_2] [grid-row:11/span_8] [writing-mode:vertical-rl]">
+              BOX VIP</div>
+
+
+            <!-- Mesa VIP (bloque central grande) -->
+            <div
+              class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:5/span_6] [grid-row:15/span_6] ">
+              MESA VIP
+            </div>
+
+
+
+
+            <!-- Mezzanine central -->
+            <div
+              class="flex flex-col items-center justify-center p-6 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:5/span_6] [grid-row:22/span_3] ">
+              MEZZANINE</div>
+
+
+
+            <!-- Backstage + Barra inferior -->
+            <div
+              class="flex items-center justify-center font-bold text-xs select-none border border-black text-white bg-black [grid-column:1/span_2] [grid-row:20/span_5] [writing-mode:vertical-rl]">
+              BACKSTAGE</div>
+            <div
+              class="flex flex-col items-center justify-center p-6 text-center font-bold text-xs select-none bg-[#b71c1c] text-white border border-gray-100 shadow rounded-tl-[20px] rounded-bl-[20px] [grid-column:13/span_2] [grid-row:20/span_5]">
+              BARRA
+            </div>
+          </div>
 
         </div>
 
@@ -204,13 +216,42 @@
 
       </div>
 
+      <!-- ADMIN-SYSTEM -->
+    <div class=" w-full flex flex-col items-center justify-center px-6 py-8 sm:pl-[80px] mx-auto md:h-screen lg:py-0 ">
+        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 max-w-7xl xl:p-0 dark:bg-gray-800 dark:border-gray-700 div-margin">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <div class=" grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-[40px] lg:grid-cols-12">
+                <div class="mr-auto place-self-center lg:col-span-7">
+                    <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Bienvenido {{ user?.nombre }} {{ user?.apellidoPaterno }} {{ user?.apellidoMaterno }} al Panel Administrativo.</h1>
+                    <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400 text-justify ">Administra la disposición del mapa de Evaclub, genera y valida QR para invitados, organiza eventos y controla accesos con facilidad. ¡Todo lo que necesitas para mantener Evaclub en perfecto orden está a solo un clic de distancia!</p>
+                    <a routerLink="/admin/eventos" class="mb-2 inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-[#3f51b5] hover:bg-[#3f51b5] focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                        Ver Eventos
+
+                        <svg class="w-5 h-5 ml-2 -mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                        </svg>
+
+                      </a>
+                    <a routerLink="/admin/view-usuarios" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                        Ver usuarios
+                    </a>
+                </div>
+                <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+                    <img src="bienvenida.webp" alt="mockup">
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
 
     </div>
 
   </div>
 </section>
 
-<section class="bg-white dark:bg-gray-900 background-section py-[50px]">
+<!-- USER -->
+<section *ngIf="isLoggedIn && hasUserRole" class="bg-white dark:bg-gray-900 background-section py-[50px]">
   <div id="nosotros"
     class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6 ">
     <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
@@ -227,7 +268,8 @@
     </div>
   </div>
 </section>
-<section class="bg-white dark:bg-gray-900 background-section-2 py-[50px]">
+<!-- USER -->
+<section *ngIf="isLoggedIn && hasUserRole" class="bg-white dark:bg-gray-900 background-section-2 py-[50px]">
   <div id="galeria" class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
     <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
       <h2 class="mb-4 text-4xl tracking-tight font-extrabold font-title text-gray-900 dark:text-white">Galería</h2>
@@ -283,7 +325,8 @@
   </div>
 
 </section>
-<section class="bg-white dark:bg-gray-900 background-section py-[50px]">
+<!-- USER -->
+<section *ngIf="isLoggedIn && hasUserRole" class="bg-white dark:bg-gray-900 background-section py-[50px]">
   <div id="testimonios" class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
     <figure class="max-w-screen-md mx-auto">
       <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none"
@@ -307,8 +350,8 @@
     </figure>
   </div>
 </section>
-
-<section class="bg-white dark:bg-gray-900 background-section-2 py-[50px]">
+<!-- USER -->
+<section *ngIf="isLoggedIn && hasUserRole" class="bg-white dark:bg-gray-900 background-section-2 py-[50px]">
   <div id="staff" class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
     <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
       <h2 class="mb-4 text-4xl tracking-tight font-extrabold font-title text-gray-900 dark:text-white">Nuestro Staff
