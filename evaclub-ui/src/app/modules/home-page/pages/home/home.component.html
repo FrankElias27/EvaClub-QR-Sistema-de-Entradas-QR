@@ -217,7 +217,7 @@
       </div>
 
       <!-- ADMIN-SYSTEM -->
-    <div class=" w-full flex flex-col items-center justify-center px-6 py-8 sm:pl-[80px] mx-auto md:h-screen lg:py-0 ">
+    <div *ngIf="isLoggedIn && hasAdminSystemRole"  class=" w-full flex flex-col items-center justify-center px-6 py-8 sm:pl-[80px] mx-auto md:h-screen lg:py-0 ">
         <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 max-w-7xl xl:p-0 dark:bg-gray-800 dark:border-gray-700 div-margin">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
               <div class=" grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-[40px] lg:grid-cols-12">
