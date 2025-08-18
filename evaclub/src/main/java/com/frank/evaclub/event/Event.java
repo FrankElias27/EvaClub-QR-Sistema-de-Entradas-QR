@@ -28,8 +28,6 @@ public class Event extends BaseAuditingEntity {
     private String name;
     private String eventCover;
     private LocalDateTime eventDate;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
     private boolean enabled;
 
     @OneToMany(mappedBy = "event",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
