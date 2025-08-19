@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 import { CreateEventComponent } from '../../components/create-event/create-event.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { initFlowbite } from 'flowbite';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-events',
@@ -32,19 +33,19 @@ export class EventsComponent implements OnInit {
 
   constructor(private eventsService: EventsService,
     private dialog: MatDialog
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loadEvents();
   }
 
   loadEvents(): void {
-    this.eventsService.findAllEvents({ page : this.pageIndex, size : this.pageSize }).subscribe({
+    this.eventsService.findAllEvents({ page: this.pageIndex, size: this.pageSize }).subscribe({
       next: (res) => {
         if (res.content) {
-            this.dataSource.data = res.content;
-          }
-          console.log(this.dataSource.data)
+          this.dataSource.data = res.content;
+        }
+        console.log(this.dataSource.data)
         this.totalElements = res.totalElements ?? 0;
       },
       error: (err) => console.error('Error al cargar eventos', err)
@@ -52,23 +53,25 @@ export class EventsComponent implements OnInit {
   }
 
 
-  onPageChange(event: any) : void {
-    this.pageIndex= event.pageIndex;
-    this.pageSize= event.pageSize;
+  onPageChange(event: any): void {
+    this.pageIndex = event.pageIndex;
+    this.pageSize = event.pageSize;
     this.loadEvents();
   }
 
   openAddEventModal() {
-  const dialogRef = this.dialog.open(CreateEventComponent, {
-    width: '600px',
-  });
+    const dialogRef = this.dialog.open(CreateEventComponent, {
+      width: '600px',
+    });
 
-  dialogRef.afterClosed().subscribe(result => {
-    if (result) {
-      if (result.type === 'DEFAULT') {
+    dialogRef.afterClosed().subscribe(result => {
+      if (!result) return; // Si no hay resultado, salimos
+
+      if (result.defaultLayout) {
+        // Caso defaultLayout = true
         this.eventsService.saveEventDefault({ body: result }).subscribe({
           next: (response: EventResponse) => {
-            console.log('Evento creado con ID:',  response.eventId);
+            console.log('Evento creado con ID:', response.eventId);
             this.loadEvents();
             Swal.fire({
               icon: 'success',
@@ -87,6 +90,7 @@ export class EventsComponent implements OnInit {
           }
         });
       } else {
+        // Caso defaultLayout = false
         this.eventsService.saveEvent({ body: result }).subscribe({
           next: (newEventId: number) => {
             console.log('Evento creado con ID:', newEventId);
@@ -108,8 +112,6 @@ export class EventsComponent implements OnInit {
           }
         });
       }
-    }
-  });
-}
-
+    });
+  }
 }
