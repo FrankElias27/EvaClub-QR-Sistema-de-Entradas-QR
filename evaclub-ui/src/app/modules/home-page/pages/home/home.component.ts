@@ -4,6 +4,7 @@ import { initFlowbite } from 'flowbite';
 import { KeycloakService } from '../../../../utils/keycloak/keycloak.service';
 import { CommonModule } from '@angular/common';
 import { EventsService } from '../../../../services/services/events.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class HomeComponent implements AfterViewInit, OnInit {
   hasUserRole = false;
 
   constructor(private keycloakService: KeycloakService,
-              private EventsService:EventsService
+              private EventsService:EventsService,
+              private router: Router,
   ) {}
 
   ngAfterViewInit() {
@@ -70,5 +72,26 @@ export class HomeComponent implements AfterViewInit, OnInit {
       }
     }
 
+
+  goToEvents() {
+  const isMobile = window.innerWidth <= 768;
+  this.router.navigate(['/home/events']).then(() => {
+    if (isMobile) {
+      this.closeSidebar();
+    }
+  });
+  }
+
+  closeSidebar() {
+  const sidebar = document.getElementById('default-sidebar');
+  if (sidebar) {
+    sidebar.classList.add('-translate-x-full');
+  }
+
+  const overlay = document.querySelector('[drawer-backdrop]') as HTMLElement;
+  if (overlay) {
+    overlay.remove();
+  }
+}
 
 }

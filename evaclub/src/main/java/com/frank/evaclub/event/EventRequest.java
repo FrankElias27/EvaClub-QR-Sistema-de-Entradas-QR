@@ -1,6 +1,8 @@
 package com.frank.evaclub.event;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public record EventRequest(
@@ -15,7 +17,7 @@ public record EventRequest(
         String eventCover,
 
         @NotNull(message = "302")
-        LocalDateTime eventDate,
+        LocalDate eventDate,
 
         boolean enabled,
 

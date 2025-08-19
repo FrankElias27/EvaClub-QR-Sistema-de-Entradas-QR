@@ -8,6 +8,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -27,7 +28,7 @@ public class Event extends BaseAuditingEntity {
     private Long eventId;
     private String name;
     private String eventCover;
-    private LocalDateTime eventDate;
+    private LocalDate eventDate;
     private boolean enabled;
     private boolean defaultLayout;
 
