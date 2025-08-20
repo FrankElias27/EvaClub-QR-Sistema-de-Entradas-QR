@@ -1,67 +1,67 @@
 <div class="flex justify-center">
 
-          <div class="grid-mapa" aria-label="Mapa del recinto por zonas, en cuadrados">
-            <!-- Barra superior y baños -->
-
-            <div
-                class="flex items-center justify-center p-6 text-center text-gray-900 bg-orange-300 rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none  [grid-column:4] [grid-row:2]">
-
-                P</div>
-              <div
-                class="flex items-center justify-center p-6 text-center text-gray-900 bg-orange-300 rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:4] [grid-row:4]">
-
-                P</div>
-              <div
-                class="flex items-center justify-center p-6 text-center text-gray-900 bg-orange-300 rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:4] [grid-row:5]">
-
-                P</div>
-              <div
-                class="flex items-center justify-center p-6 text-center text-gray-900 bg-orange-300 rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:4] [grid-row:6]">
-
-                P</div>
-              <div
-                class="flex items-center justify-center p-6 text-center text-gray-900 bg-orange-300 rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:4] [grid-row:7]">
-
-                P</div>
-              <div
-                class="flex items-center justify-center p-6 text-center text-gray-900 bg-orange-300 rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:4] [grid-row:8]">
-
-                P</div>
-              <div
-                class="flex items-center justify-center p-6 text-center text-gray-900 bg-orange-300 rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:4] [grid-row:9]">
-
-                P</div>
-
-              <div
-                class="flex items-center justify-center p-6 text-center text-gray-900 bg-pink-300 rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:2] [grid-row:2]">
-
-                P</div>
-
-              <div class="flex items-center justify-center border border-black [grid-column:2] [grid-row:3]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"
-                  class="w-16 h-16 text-black transform -rotate-90" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="20" y="10" width="24" height="6" />
-                </svg>
-              </div>
-
-              <div
-                class="flex items-center justify-center p-6 text-center text-gray-900 bg-pink-300 rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:2] [grid-row:4]">
-                p
-              </div>
-              <div
-                class="flex items-center justify-center p-6 text-center text-gray-900 bg-pink-300 rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:2] [grid-row:5]">
-
-                P</div>
-              <div
-                class="flex items-center justify-center p-6 text-center text-gray-900 bg-pink-300 rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:2] [grid-row:6]">
-
-                P</div>
-              <div
-                class="flex items-center justify-center p-6 text-center text-gray-900 bg-pink-300 rounded-lg border border-gray-100 shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white font-bold text-xs select-none [grid-column:2] [grid-row:7]">
-
-                P</div>
 
 
-          </div>
+  <div class="grid-mapa" aria-label="Mapa del recinto por zonas, en cuadrados">
 
+      <!-- Título -->
+    <div class="mb-4 [grid-column:1/span_5]">
+      <h2 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white text-center">
+        Selecciona tu Box
+      </h2>
+      <p class="text-center text-gray-600 dark:text-gray-400 text-sm">
+        Asegura tu box exclusivo al mejor precio
+      </p>
+    </div>
+
+    <!-- Leyenda de estados centrada -->
+    <div class="flex justify-center [grid-column:1/span_5]  mb-6">
+      <div class="grid grid-cols-3 gap-6 text-sm text-gray-500 dark:text-gray-400">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 border border-black bg-gray-100 rounded-[4px]"></span>
+          Disponible
         </div>
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 border border-black bg-gray-600 rounded-[4px]"></span>
+          Ocupado
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 border border-black bg-indigo-600 rounded-[4px]"></span>
+          Seleccionado
+        </div>
+      </div>
+    </div>
+
+
+    <div
+      *ngFor="let box of platinumBoxes; let i = index"
+      class="flex items-center justify-center p-6 text-center rounded-lg border font-bold text-xs select-none cursor-pointer"
+      [ngClass]="getBoxClasses(box)"
+      [ngStyle]="{
+        'grid-column': 4,
+        'grid-row': i + 2
+      }"
+      (click)="selectBox(box)"
+    >
+      PLATINUM BOX- IZQ
+    </div>
+
+    <div
+      *ngFor="let box of palcoBoxes; let i = index"
+      class="flex items-center justify-center p-6 text-center rounded-lg border font-bold text-xs select-none cursor-pointer"
+      [ngClass]="getBoxClasses(box)"
+      [ngStyle]="{
+        'grid-column': 2,
+        'grid-row': i + 2
+      }"
+      (click)="selectBox(box)"
+    >
+      PALCO BOX
+    </div>
+
+
+
+
+  </div>
+
+</div>

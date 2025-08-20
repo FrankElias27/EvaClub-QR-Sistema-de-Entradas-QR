@@ -44,4 +44,9 @@ public class EventController {
         EventResponse response = service.saveEventDefault(request, connectedUser);
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/active/id")
+    public ResponseEntity<Long> getActiveEventId(Authentication connectedUser) {
+        return ResponseEntity.ok(service.findActiveEventId(connectedUser));
+    }
 }

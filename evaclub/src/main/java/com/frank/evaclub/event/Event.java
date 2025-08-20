@@ -22,7 +22,6 @@ import java.util.Set;
 @Table(name = "events")
 public class Event extends BaseAuditingEntity {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long eventId;

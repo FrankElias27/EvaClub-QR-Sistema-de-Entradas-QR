@@ -12,6 +12,8 @@ import { StrictHttpResponse } from '../strict-http-response';
 import { EventResponse } from '../models/event-response';
 import { findAllEvents } from '../fn/events/find-all-events';
 import { FindAllEvents$Params } from '../fn/events/find-all-events';
+import { getActiveEventId } from '../fn/events/get-active-event-id';
+import { GetActiveEventId$Params } from '../fn/events/get-active-event-id';
 import { PageResponseEventResponse } from '../models/page-response-event-response';
 import { saveEvent } from '../fn/events/save-event';
 import { SaveEvent$Params } from '../fn/events/save-event';
@@ -96,6 +98,31 @@ export class EventsService extends BaseService {
   saveEventDefault(params: SaveEventDefault$Params, context?: HttpContext): Observable<EventResponse> {
     return this.saveEventDefault$Response(params, context).pipe(
       map((r: StrictHttpResponse<EventResponse>): EventResponse => r.body)
+    );
+  }
+
+  /** Path part for operation `getActiveEventId()` */
+  static readonly GetActiveEventIdPath = '/events/active/id';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `getActiveEventId()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  getActiveEventId$Response(params?: GetActiveEventId$Params, context?: HttpContext): Observable<StrictHttpResponse<number>> {
+    return getActiveEventId(this.http, this.rootUrl, params, context);
+  }
+
+  /**
+   * This method provides access only to the response body.
+   * To access the full response (for headers, for example), `getActiveEventId$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  getActiveEventId(params?: GetActiveEventId$Params, context?: HttpContext): Observable<number> {
+    return this.getActiveEventId$Response(params, context).pipe(
+      map((r: StrictHttpResponse<number>): number => r.body)
     );
   }
 

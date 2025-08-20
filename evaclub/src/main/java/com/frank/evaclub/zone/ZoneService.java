@@ -43,4 +43,14 @@ public class ZoneService {
         );
     }
 
+    public List<ZoneResponse> findAllZonesByEventId(Long eventId, Authentication connectedUser) {
+        List<Zone> zones = zoneRepository.findAllByEvent_EventId(eventId);
+        List<ZoneResponse> zoneResponses = zones.stream()
+                .map(zoneMapper::toZoneResponse)
+                .toList();
+        return zoneResponses;
+    }
+
+
+
 }

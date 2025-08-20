@@ -9,8 +9,11 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
+import { BoxResponse } from '../models/box-response';
 import { findAllBoxes } from '../fn/box/find-all-boxes';
 import { FindAllBoxes$Params } from '../fn/box/find-all-boxes';
+import { getBoxesByZonaAndEvento } from '../fn/box/get-boxes-by-zona-and-evento';
+import { GetBoxesByZonaAndEvento$Params } from '../fn/box/get-boxes-by-zona-and-evento';
 import { PageResponseBoxResponse } from '../models/page-response-box-response';
 import { saveBox } from '../fn/box/save-box';
 import { SaveBox$Params } from '../fn/box/save-box';
@@ -68,6 +71,31 @@ export class BoxService extends BaseService {
   saveBox(params: SaveBox$Params, context?: HttpContext): Observable<number> {
     return this.saveBox$Response(params, context).pipe(
       map((r: StrictHttpResponse<number>): number => r.body)
+    );
+  }
+
+  /** Path part for operation `getBoxesByZonaAndEvento()` */
+  static readonly GetBoxesByZonaAndEventoPath = '/boxes/zona/{zonaId}/evento/{eventoId}';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `getBoxesByZonaAndEvento()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  getBoxesByZonaAndEvento$Response(params: GetBoxesByZonaAndEvento$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<BoxResponse>>> {
+    return getBoxesByZonaAndEvento(this.http, this.rootUrl, params, context);
+  }
+
+  /**
+   * This method provides access only to the response body.
+   * To access the full response (for headers, for example), `getBoxesByZonaAndEvento$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  getBoxesByZonaAndEvento(params: GetBoxesByZonaAndEvento$Params, context?: HttpContext): Observable<Array<BoxResponse>> {
+    return this.getBoxesByZonaAndEvento$Response(params, context).pipe(
+      map((r: StrictHttpResponse<Array<BoxResponse>>): Array<BoxResponse> => r.body)
     );
   }
 

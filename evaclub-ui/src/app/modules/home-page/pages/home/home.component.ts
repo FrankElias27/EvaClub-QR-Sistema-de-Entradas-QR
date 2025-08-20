@@ -100,7 +100,6 @@ export class HomeComponent implements AfterViewInit, OnInit {
      const dialogRef = this.dialog.open(PlatinumPalcoComponent, {
        width: '90vw',
       height: '90vh',
-      panelClass: 'custom-modal',
      });
   }
 

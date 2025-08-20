@@ -253,6 +253,104 @@
           }
         }
       }
+    },
+    "/zones/event/{eventId}": {
+      "get": {
+        "tags": [
+          "Zone"
+        ],
+        "operationId": "getZonesByEventId",
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ZoneResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/events/active/id": {
+      "get": {
+        "tags": [
+          "events"
+        ],
+        "operationId": "getActiveEventId",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/boxes/zona/{zonaId}/evento/{eventoId}": {
+      "get": {
+        "tags": [
+          "Box"
+        ],
+        "operationId": "getBoxesByZonaAndEvento",
+        "parameters": [
+          {
+            "name": "zonaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "eventoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BoxResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -336,11 +434,15 @@
           },
           "enabled": {
             "type": "boolean"
+          },
+          "defaultLayout": {
+            "type": "boolean"
           }
         }
       },
       "BoxRequest": {
         "required": [
+          "name",
           "number",
           "status",
           "zoneId"
@@ -350,6 +452,9 @@
           "boxId": {
             "type": "integer",
             "format": "int64"
+          },
+          "name": {
+            "type": "string"
           },
           "number": {
             "type": "string"
@@ -459,6 +564,9 @@
           "boxId": {
             "type": "integer",
             "format": "int64"
+          },
+          "name": {
+            "type": "string"
           },
           "number": {
             "type": "string"

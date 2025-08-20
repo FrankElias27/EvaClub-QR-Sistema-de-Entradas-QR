@@ -44,4 +44,14 @@ public class BoxService {
                 boxes.isLast()
         );
     }
+
+    public List<BoxResponse> findAllBoxesByZonaAndEvento(Long zonaId, Long eventoId, Authentication connectedUser) {
+        List<Box> boxes = boxRepository.findAllByZonaAndEventoEnabled(zonaId, eventoId);
+        List<BoxResponse> boxResponses = boxes.stream()
+                .map(boxMapper::toBoxResponse)
+                .toList();
+        return boxResponses;
+    }
+
+
 }

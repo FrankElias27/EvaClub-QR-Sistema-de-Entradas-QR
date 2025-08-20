@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("boxes")
 @RequiredArgsConstructor
@@ -31,5 +33,14 @@ public class BoxController {
             Authentication connectedUser
     ) {
         return ResponseEntity.ok(service.findAllBoxes(page, size, connectedUser));
+    }
+
+    @GetMapping("/zone/{zonaId}/event/{eventoId}")
+    public ResponseEntity<List<BoxResponse>> getBoxesByZonaAndEvento(
+            @PathVariable Long zonaId,
+            @PathVariable Long eventoId,
+            Authentication connectedUser
+    ) {
+        return ResponseEntity.ok(service.findAllBoxesByZonaAndEvento(zonaId, eventoId, connectedUser));
     }
 }

@@ -94,4 +94,18 @@ public class EventService {
                 random.nextInt(10000),
                 random.nextInt(1000));
     }
+
+    public Long findActiveEventId(Authentication connectedUser) {
+        List<Event> activeEvents = eventRepository.findByEnabledTrue();
+
+        if (activeEvents.isEmpty()) {
+            throw new IllegalStateException("No hay un evento activo en este momento");
+        }
+
+        if (activeEvents.size() > 1) {
+            throw new IllegalStateException("Existe más de un evento activo, revise la configuración");
+        }
+
+        return activeEvents.get(0).getEventId();
+    }
 }
