@@ -182,16 +182,87 @@
           }
         }
       }
+    },
+    "/boxes": {
+      "get": {
+        "tags": [
+          "Box"
+        ],
+        "operationId": "findAllBoxes",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageResponseBoxResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Box"
+        ],
+        "operationId": "saveBox",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BoxRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
       "ZoneRequest": {
         "required": [
+          "columns",
           "eventId",
           "name",
-          "price",
-          "rows"
+          "price"
         ],
         "type": "object",
         "properties": {
@@ -206,7 +277,7 @@
             "type": "number",
             "format": "double"
           },
-          "rows": {
+          "columns": {
             "type": "integer",
             "format": "int32"
           },
@@ -236,7 +307,7 @@
           },
           "eventDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date"
           },
           "enabled": {
             "type": "boolean"
@@ -261,10 +332,34 @@
           },
           "eventDate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date"
           },
           "enabled": {
             "type": "boolean"
+          }
+        }
+      },
+      "BoxRequest": {
+        "required": [
+          "number",
+          "status",
+          "zoneId"
+        ],
+        "type": "object",
+        "properties": {
+          "boxId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "number": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "zoneId": {
+            "type": "integer",
+            "format": "int64"
           }
         }
       },
@@ -315,7 +410,7 @@
             "type": "number",
             "format": "double"
           },
-          "rows": {
+          "columns": {
             "type": "integer",
             "format": "int32"
           },
@@ -332,6 +427,58 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/EventResponse"
+            }
+          },
+          "number": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "first": {
+            "type": "boolean"
+          },
+          "last": {
+            "type": "boolean"
+          }
+        }
+      },
+      "BoxResponse": {
+        "type": "object",
+        "properties": {
+          "boxId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "number": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "zoneId": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "PageResponseBoxResponse": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BoxResponse"
             }
           },
           "number": {

@@ -81,6 +81,15 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   });
   }
 
+  goToBox() {
+  const isMobile = window.innerWidth <= 768;
+  this.router.navigate(['/home/box']).then(() => {
+    if (isMobile) {
+      this.closeSidebar();
+    }
+  });
+  }
+
   closeSidebar() {
   const sidebar = document.getElementById('default-sidebar');
   if (sidebar) {

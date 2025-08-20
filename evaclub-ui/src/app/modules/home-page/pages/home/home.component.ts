@@ -5,6 +5,8 @@ import { KeycloakService } from '../../../../utils/keycloak/keycloak.service';
 import { CommonModule } from '@angular/common';
 import { EventsService } from '../../../../services/services/events.service';
 import { Router } from '@angular/router';
+import { PlatinumPalcoComponent } from '../../modals/Evaclub-Map/platinum-palco/platinum-palco.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -22,8 +24,8 @@ export class HomeComponent implements AfterViewInit, OnInit {
   hasUserRole = false;
 
   constructor(private keycloakService: KeycloakService,
-              private EventsService:EventsService,
               private router: Router,
+              private dialog: MatDialog
   ) {}
 
   ngAfterViewInit() {
@@ -92,6 +94,14 @@ export class HomeComponent implements AfterViewInit, OnInit {
   if (overlay) {
     overlay.remove();
   }
-}
+ }
+
+ openAddPlatinumPalco() {
+     const dialogRef = this.dialog.open(PlatinumPalcoComponent, {
+       width: '90vw',
+      height: '90vh',
+      panelClass: 'custom-modal',
+     });
+  }
 
 }

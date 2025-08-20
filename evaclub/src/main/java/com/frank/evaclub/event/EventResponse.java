@@ -21,4 +21,5 @@ public class EventResponse {
     private String eventCover;
     private LocalDate eventDate;
     private boolean enabled;
+    private boolean defaultLayout;
 }

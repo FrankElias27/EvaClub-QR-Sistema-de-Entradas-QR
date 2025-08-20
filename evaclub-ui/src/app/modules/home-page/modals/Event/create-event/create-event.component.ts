@@ -29,15 +29,13 @@ export class CreateEventComponent  {
     this.eventForm = this.fb.group({
       name: ['', Validators.required],
       eventDate: ['', Validators.required],
+      eventCover:['default-cover.jpg',Validators.required],
       enabled: [true],
-      defaultLayout: [false]
+      defaultLayout: [true]
     });
 
   }
 
-  onTypeChange(value: string) {
-      this.eventForm.get('defaultLayout')?.setValue(value === 'DEFAULT');
-    }
 
   onSubmit() {
     if (this.eventForm.valid) {

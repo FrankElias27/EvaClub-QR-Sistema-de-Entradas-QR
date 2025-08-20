@@ -30,6 +30,12 @@ const routes: Routes = [
         loadComponent: () =>
           import('./pages/events/events.component').then(m => m.EventsComponent),
       },
+      {
+        path: 'box',
+        canActivate: [authGuard],
+        loadComponent: () =>
+          import('./pages/box/box.component').then(m => m.BoxComponent),
+      },
     ],
   },
 ];

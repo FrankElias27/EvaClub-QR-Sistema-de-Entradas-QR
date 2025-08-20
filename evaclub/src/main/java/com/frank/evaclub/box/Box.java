@@ -15,17 +15,17 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @Entity
 @SuperBuilder
-@Table(name = "seats")
+@Table(name = "box")
 public class Box extends BaseAuditingEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long boxId;
+    private String name;
     private String number;
 
     @Enumerated(EnumType.STRING)
     private BoxStatus status;
-
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "zone_id", nullable = false)

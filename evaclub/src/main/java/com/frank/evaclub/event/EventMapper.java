@@ -11,6 +11,7 @@ public class EventMapper {
                 .name(request.name())
                 .eventDate(request.eventDate())
                 .enabled(request.enabled())
+                .defaultLayout(request.defaultLayout())
                 .build();
     }
 
@@ -20,6 +21,7 @@ public class EventMapper {
                 .name(event.getName())
                 .eventDate(event.getEventDate())
                 .enabled(event.isEnabled())
+                .defaultLayout(event.isDefaultLayout())
                 .build();
     }
 }

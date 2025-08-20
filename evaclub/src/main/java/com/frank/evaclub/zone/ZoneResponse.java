@@ -16,6 +16,6 @@ public class ZoneResponse {
     private Long id;
     private String name;
     private Double price;
-    private Integer rows;
+    private Integer columns;
     private Long eventId;
 }

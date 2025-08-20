@@ -6,7 +6,7 @@ import { EventResponse } from '../../../../services/models';
 import { MatIconModule } from '@angular/material/icon';
 import { DatePipe, NgFor } from '@angular/common';
 import Swal from 'sweetalert2';
-import { CreateEventComponent } from '../../components/create-event/create-event.component';
+import { CreateEventComponent } from '../../modals/Event/create-event/create-event.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { initFlowbite } from 'flowbite';
 import { Observable } from 'rxjs';

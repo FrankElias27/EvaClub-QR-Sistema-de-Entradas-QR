@@ -6,6 +6,7 @@ import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { ZoneService } from './services/zone.service';
 import { EventsService } from './services/events.service';
+import { BoxService } from './services/box.service';
 
 /**
  * Module that provides all services and configuration.
@@ -17,6 +18,7 @@ import { EventsService } from './services/events.service';
   providers: [
     ZoneService,
     EventsService,
+    BoxService,
     ApiConfiguration
   ],
 })

@@ -20,7 +20,7 @@ public record ZoneRequest(
 
         @NotNull(message = "202")
         @PositiveOrZero(message = "202")
-        Integer rows,
+        Integer columns,
 
         @NotNull(message = "203")
         Long eventId

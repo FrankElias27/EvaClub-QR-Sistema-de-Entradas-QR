@@ -28,7 +28,7 @@ public class Zone extends BaseAuditingEntity {
     private Long zoneId;
     private String name;
     private Double price;
-    private Integer rows;
+    private Integer columns;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "event_id", nullable = false)

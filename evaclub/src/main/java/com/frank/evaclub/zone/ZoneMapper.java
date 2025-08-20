@@ -11,7 +11,7 @@ public class ZoneMapper {
                 .zoneId(request.id())
                 .name(request.name())
                 .price(request.price())
-                .rows(request.rows())
+                .columns(request.columns())
                 .event(Event.builder()
                         .eventId(request.eventId())
                         .enabled(false)
@@ -25,7 +25,7 @@ public class ZoneMapper {
                 .id(zone.getZoneId())
                 .name(zone.getName())
                 .price(zone.getPrice())
-                .rows(zone.getRows())
+                .columns(zone.getColumns())
                 .build();
     }
 }

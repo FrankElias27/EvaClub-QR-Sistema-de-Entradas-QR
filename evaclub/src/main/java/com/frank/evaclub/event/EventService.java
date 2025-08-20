@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.IntStream;
 
 @Service
@@ -62,9 +63,9 @@ public class EventService {
             Arrays.stream(DefaultLayoutEvent.values())
                     .forEach(layout -> {
                         Zone zone = Zone.builder()
-                                .name(layout.getDisplayName())
+                                .name(event.getName() + " - " + layout.getDisplayName())
                                 .price(0.0)
-                                .rows(1)
+                                .columns(layout.getColumns())
                                 .event(saved)
                                 .build();
                         zoneRepository.save(zone);
@@ -72,7 +73,8 @@ public class EventService {
                         IntStream.rangeClosed(1, layout.getCapacity())
                                 .forEach(i -> {
                                     Box box = Box.builder()
-                                            .number(String.valueOf(i))
+                                            .name(event.getName() + " - " + layout.getDisplayName())
+                                            .number(generateBoxNumber())
                                             .status(BoxStatus.AVAILABLE)
                                             .zone(zone)
                                             .build();
@@ -82,5 +84,14 @@ public class EventService {
         }
 
         return eventMapper.toEventResponse(saved);
+    }
+
+    private String generateBoxNumber() {
+        Random random = new Random();
+        return String.format("%04d-%03d-%04d-%03d",
+                random.nextInt(10000),
+                random.nextInt(1000),
+                random.nextInt(10000),
+                random.nextInt(1000));
     }
 }
