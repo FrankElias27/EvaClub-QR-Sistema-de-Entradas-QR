@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { ZoneService } from './services/zone.service';
+import { MercadoPagoService } from './services/mercado-pago.service';
 import { EventsService } from './services/events.service';
 import { BoxService } from './services/box.service';
 
@@ -17,6 +18,7 @@ import { BoxService } from './services/box.service';
   declarations: [],
   providers: [
     ZoneService,
+    MercadoPagoService,
     EventsService,
     BoxService,
     ApiConfiguration

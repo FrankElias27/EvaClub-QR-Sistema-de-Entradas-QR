@@ -33,3 +33,9 @@ application:
 
 server:
   port: 8088
+
+mercadopago:
+  access-token: ${MP_ACCESS_TOKEN}
+  success-url: ${MP_SUCCESS_URL}
+  failure-url: ${MP_FAILURE_URL}
+  pending-url: ${MP_PENDING_URL}

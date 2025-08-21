@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import { BoxService, EventsService, ZoneService } from '../../../../../services/services';
 import { BoxResponse, ZoneResponse } from '../../../../../services/models';
 import { CommonModule } from '@angular/common';
+import { WalletComponent } from '../../../components/wallet/wallet.component';
+import { environment } from '../../../../../../environments/environments';
 
 @Component({
   selector: 'app-platinum-palco',
   imports: [
-    CommonModule
+    CommonModule,
+    WalletComponent
   ],
   templateUrl: './platinum-palco.component.html',
   styleUrl: './platinum-palco.component.css'
@@ -19,6 +22,7 @@ export class PlatinumPalcoComponent {
   platinumBoxes: BoxResponse[] = [];
   palcoBoxes: BoxResponse[] = [];
   selectedBoxId: number | null = null;
+  publicKey: string = environment.MERCADO_PAGO_PUBLIC_KEY;
 
   constructor(private eventsService: EventsService,
     private zonesService:ZoneService,
@@ -105,5 +109,13 @@ export class PlatinumPalcoComponent {
         return 'bg-gray-300';
     }
   }
+
+  getSelectedBox(): BoxResponse | undefined {
+  return (
+    this.platinumBoxes.find(b => b.boxId === this.selectedBoxId) ||
+    this.palcoBoxes.find(b => b.boxId === this.selectedBoxId)
+  );
+}
+
 
 }

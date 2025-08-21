@@ -75,7 +75,7 @@ export class BoxService extends BaseService {
   }
 
   /** Path part for operation `getBoxesByZonaAndEvento()` */
-  static readonly GetBoxesByZonaAndEventoPath = '/boxes/zona/{zonaId}/evento/{eventoId}';
+  static readonly GetBoxesByZonaAndEventoPath = '/boxes/zone/{zonaId}/event/{eventoId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

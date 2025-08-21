@@ -12,6 +12,16 @@
       <p class="text-center text-gray-600 dark:text-gray-400 text-sm">
         Asegura tu box exclusivo al mejor precio
       </p>
+      <div *ngIf="selectedBoxId as boxId" class="mt-6">
+        <app-wallet
+          [publicKey]="publicKey"
+          locale="es-PE"
+          [title]="getSelectedBox()?.name || 'Box reservado'"
+          [price]="1"
+          [quantity]="1"
+          [productId]="boxId.toString()">
+        </app-wallet>
+      </div>
     </div>
 
     <!-- Leyenda de estados centrada -->

@@ -82,6 +82,36 @@
         }
       }
     },
+    "/mp/create-preference": {
+      "post": {
+        "tags": [
+          "MercadoPago"
+        ],
+        "operationId": "createPreference",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePreferenceRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatePreferenceResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/events": {
       "get": {
         "tags": [
@@ -309,7 +339,7 @@
         }
       }
     },
-    "/boxes/zona/{zonaId}/evento/{eventoId}": {
+    "/boxes/zone/{zonaId}/event/{eventoId}": {
       "get": {
         "tags": [
           "Box"
@@ -382,6 +412,36 @@
           "eventId": {
             "type": "integer",
             "format": "int64"
+          }
+        }
+      },
+      "CreatePreferenceRequest": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "currencyId": {
+            "type": "string"
+          }
+        }
+      },
+      "CreatePreferenceResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
           }
         }
       },

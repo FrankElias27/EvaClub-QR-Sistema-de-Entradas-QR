@@ -1,7 +1,9 @@
 /* tslint:disable */
 /* eslint-disable */
-export type { BoxRequest } from './models/box-request';
+export type{ BoxRequest } from './models/box-request';
 export type{ BoxResponse } from './models/box-response';
+export type{ CreatePreferenceRequest } from './models/create-preference-request';
+export type{ CreatePreferenceResponse } from './models/create-preference-response';
 export type{ EventRequest } from './models/event-request';
 export type{ EventResponse } from './models/event-response';
 export type{ PageResponseBoxResponse } from './models/page-response-box-response';
