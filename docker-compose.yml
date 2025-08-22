@@ -22,7 +22,7 @@ services:
     ports:
       - 9090:8080
     depends_on:
-      - postgres
+      - postgres-keycloak
     environment:
       KC_BOOTSTRAP_ADMIN_USERNAME: ${KEYCLOAK_ADMIN}
       KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
@@ -54,6 +54,38 @@ services:
       - evaclub
     restart: unless-stopped
 
+  sonarqube:
+    container_name: sonar-evaclub
+    image: sonarqube
+    ports:
+      - "9000:9000"
+    depends_on:
+      - postgres-sonarqube
+    environment:
+      SONAR_ES_BOOTSTRAP_CHECKS_DISABLE: true
+      SONAR_JDBC_URL: ${SONAR_JDBC_URL}
+      SONAR_JDBC_USERNAME: ${SONAR_JDBC_USERNAME}
+      SONAR_JDBC_PASSWORD: ${SONAR_JDBC_PASSWORD}
+    networks:
+      - evaclub
+
+  postgres-sonarqube:
+    container_name: postgres-sql-sonarqube
+    image: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER_SONAR}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD_SONAR}
+      POSTGRES_DB: ${POSTGRES_DB_SONAR}
+    volumes:
+      - postgres-sonarqube:/var/lib/postgresql/data
+      - ./init-db/initSonar.sql:/docker-entrypoint-initdb.d/initSonar.sql
+    ports:
+      - 5436:5432
+    networks:
+      - evaclub
+    restart: unless-stopped
+
+
 networks:
   evaclub:
     driver: bridge
@@ -64,4 +96,6 @@ volumes:
   keycloak:
     driver: local
   postgres-keycloak:
+    driver: local
+  postgres-sonarqube:
     driver: local

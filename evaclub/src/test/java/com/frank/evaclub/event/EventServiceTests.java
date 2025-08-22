@@ -9,14 +9,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.argThat;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -48,7 +49,7 @@ public class EventServiceTests {
                 null,
                 "Evento Test",
                 "cover.jpg",
-                LocalDateTime.now(),
+                LocalDate.now(),
                 true,
                 true
         );
@@ -68,15 +69,26 @@ public class EventServiceTests {
         assertNotNull(result);
         assertEquals(savedEvent.getEventId(), result.getEventId());
 
-        for (DefaultLayoutEvent layout : DefaultLayoutEvent.values()) {
-            verify(zoneRepository, times(1)).save(argThat(zone ->
-                    zone.getName().equals(layout.getDisplayName()) &&
-                            zone.getEvent().equals(savedEvent)
-            ));
-            verify(boxRepository, times(layout.getCapacity())).save(any(Box.class));
-        }
-    }
 
+        InOrder inOrder = inOrder(zoneRepository, boxRepository);
+
+        for (DefaultLayoutEvent layout : DefaultLayoutEvent.values()) {
+
+            inOrder.verify(zoneRepository).save(argThat(zone ->
+                    zone.getName().equals(savedEvent.getName() + " - " + layout.getDisplayName()) &&
+                            zone.getEvent().getEventId().equals(savedEvent.getEventId())
+            ));
+
+
+            inOrder.verify(boxRepository, times(layout.getCapacity())).save(any(Box.class));
+        }
+
+
+        int totalCapacity = Arrays.stream(DefaultLayoutEvent.values())
+                .mapToInt(DefaultLayoutEvent::getCapacity)
+                .sum();
+        verify(boxRepository, times(totalCapacity)).save(any(Box.class));
+    }
 
 
 }
